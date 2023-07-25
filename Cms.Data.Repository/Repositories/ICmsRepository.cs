@@ -9,5 +9,9 @@ namespace Cms.Data.Repository.Repositories
         Task<IEnumerable<Course>> GetAllCoursesAsync();
 
         Course AddCourse(Course newCourse);
+
+        bool IsCourseExists(int coursedId);
+
+        Course GetCourse(int courseId);
     }
 }
