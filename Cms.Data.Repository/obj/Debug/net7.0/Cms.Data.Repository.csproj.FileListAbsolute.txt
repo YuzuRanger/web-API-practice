@@ -1,0 +1,12 @@
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\Cms.Data.Repository.csproj.AssemblyReference.cache
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\Cms.Data.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\Cms.Data.Repository.AssemblyInfoInputs.cache
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\Cms.Data.Repository.AssemblyInfo.cs
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\Cms.Data.Repository.csproj.CoreCompileInputs.cache
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\bin\Debug\net7.0\Cms.Data.Repository.deps.json
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\bin\Debug\net7.0\Cms.Data.Repository.dll
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\bin\Debug\net7.0\Cms.Data.Repository.pdb
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\Cms.Data.Repository.dll
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\refint\Cms.Data.Repository.dll
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\Cms.Data.Repository.pdb
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.Data.Repository\obj\Debug\net7.0\ref\Cms.Data.Repository.dll

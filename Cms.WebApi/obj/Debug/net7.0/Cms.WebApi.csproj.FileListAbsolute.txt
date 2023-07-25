@@ -31,3 +31,5 @@ C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\obj\Debug\net7.0\
 C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\obj\Debug\net7.0\Cms.WebApi.pdb
 C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\obj\Debug\net7.0\Cms.WebApi.genruntimeconfig.cache
 C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\obj\Debug\net7.0\ref\Cms.WebApi.dll
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\bin\Debug\net7.0\Cms.Data.Repository.dll
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\bin\Debug\net7.0\Cms.Data.Repository.pdb

@@ -107,6 +107,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Cms.Data.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Cms.Data.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cms.Data.Repository.dll": {}
+        }
       }
     }
   },
@@ -460,10 +470,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Cms.Data.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Cms.Data.Repository/Cms.Data.Repository.csproj",
+      "msbuildProject": "../Cms.Data.Repository/Cms.Data.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Cms.Data.Repository >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.9",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -493,7 +509,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\morgancs\\Documents\\GitHub\\web-API-practice\\Cms.Data.Repository\\Cms.Data.Repository.csproj": {
+              "projectPath": "C:\\Users\\morgancs\\Documents\\GitHub\\web-API-practice\\Cms.Data.Repository\\Cms.Data.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
