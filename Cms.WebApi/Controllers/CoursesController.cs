@@ -54,13 +54,29 @@ namespace Cms.WebApi.Controllers
         //     }
         // }
 
-        // approach 3 - ActionResult
+        // approach 3 - ActionResult<T>
+        // [HttpGet]
+        // public ActionResult<IEnumerable<CourseDto>> GetCourses()
+        // {
+        //     try
+        //     {
+        //         IEnumerable<Course> courses = CmsRepository.GetAllCourses();
+        //         var result = MapCourseToCourseDto(courses);
+        //         return result.ToList(); // convert to support ActionResult<T>
+        //     }
+        //     catch (System.Exception ex)
+        //     {
+        //         return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //     }
+        // }
+
+        // 
         [HttpGet]
-        public ActionResult<IEnumerable<CourseDto>> GetCourses()
+        public async Task<ActionResult<IEnumerable<CourseDto>>> GetCoursesAsync()
         {
             try
             {
-                IEnumerable<Course> courses = CmsRepository.GetAllCourses();
+                IEnumerable<Course> courses = await CmsRepository.GetAllCoursesAsync();
                 var result = MapCourseToCourseDto(courses);
                 return result.ToList(); // convert to support ActionResult<T>
             }

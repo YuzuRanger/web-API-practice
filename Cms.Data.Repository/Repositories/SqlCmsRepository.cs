@@ -2,7 +2,7 @@ using Cms.Data.Repository.Models;
 
 namespace Cms.Data.Repository.Repositories
 {
-    public class SqlCmsRepository: ICmsRepository
+    public class SqlCmsRepository //: ICmsRepository
     {
         public SqlCmsRepository()
         {
