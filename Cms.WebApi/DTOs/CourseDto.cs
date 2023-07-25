@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Cms.WebApi.DTOs
 {
     // the DTO are models for the web api (client exposed)
@@ -10,6 +12,7 @@ namespace Cms.WebApi.DTOs
 
         public int CourseDuration { get; set; }
 
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public COURSE_TYPE CourseType { get; set; }
 
     }

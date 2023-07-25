@@ -90,6 +90,21 @@ namespace Cms.WebApi.Controllers
         //     }
         // }
 
+        [HttpPost]
+        public ActionResult<CourseDto> AddCourse([FromBody]CourseDto course)
+        {
+            try
+            {
+                var newCourse = mapper.Map<Course>(course);
+                newCourse = CmsRepository.AddCourse(newCourse);
+                return mapper.Map<CourseDto>(newCourse);
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
         #region Custom Mapper Functions
         // custom map function
         // private CourseDto MapCourseToCourseDto(Course course)

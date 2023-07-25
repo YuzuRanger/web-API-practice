@@ -7,5 +7,7 @@ namespace Cms.Data.Repository.Repositories
         IEnumerable<Course> GetAllCourses();
 
         Task<IEnumerable<Course>> GetAllCoursesAsync();
+
+        Course AddCourse(Course newCourse);
     }
 }
