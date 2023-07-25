@@ -95,6 +95,11 @@ namespace Cms.WebApi.Controllers
         {
             try
             {
+                // if(!ModelState.IsValid)
+                // {
+                //     return BadRequest(ModelState);
+                // }
+                
                 var newCourse = mapper.Map<Course>(course);
                 newCourse = CmsRepository.AddCourse(newCourse);
                 return mapper.Map<CourseDto>(newCourse);
