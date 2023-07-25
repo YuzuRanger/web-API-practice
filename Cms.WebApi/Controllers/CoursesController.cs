@@ -22,18 +22,51 @@ namespace Cms.WebApi.Controllers
         //     return CmsRepository.GetAllCourses();
         // }
 
+        // approach 1 - return type of primitive or complex
+        // [HttpGet]
+        // public IEnumerable<CourseDto> GetCourses()
+        // {
+        //     try
+        //     {
+        //         IEnumerable<Course> courses = CmsRepository.GetAllCourses();
+        //         var result = MapCourseToCourseDto(courses);
+        //         return result;
+        //     }
+        //     catch (System.Exception)
+        //     {
+        //         throw;
+        //     }
+        // }
+
+        // approach 2 - IActionResult
+        //[HttpGet]
+        // public IActionResult GetCourses()
+        // {
+        //     try
+        //     {
+        //         IEnumerable<Course> courses = CmsRepository.GetAllCourses();
+        //         var result = MapCourseToCourseDto(courses);
+        //         return Ok(result);
+        //     }
+        //     catch (System.Exception ex)
+        //     {
+        //         return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        //     }
+        // }
+
+        // approach 3 - ActionResult
         [HttpGet]
-        public IEnumerable<CourseDto> GetCourses()
+        public ActionResult<IEnumerable<CourseDto>> GetCourses()
         {
             try
             {
                 IEnumerable<Course> courses = CmsRepository.GetAllCourses();
                 var result = MapCourseToCourseDto(courses);
-                return result;
+                return result.ToList(); // convert to support ActionResult<T>
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
-                throw;
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
 
