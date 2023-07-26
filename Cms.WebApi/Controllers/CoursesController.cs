@@ -74,6 +74,27 @@ namespace Cms.WebApi.Controllers
             }
         }
 
+        [HttpPut("{courseId}")]
+        public ActionResult<CourseDto> UpdateCourse(int courseId, CourseDto course)
+        {
+            try
+            {
+                if(!CmsRepository.IsCourseExists(courseId))
+                {
+                    return NotFound();
+                }
+                Course updatedCourse = mapper.Map<Course>(course);
+                updatedCourse = CmsRepository.UpdateCourse(courseId, updatedCourse);
+                var result = mapper.Map<CourseDto>(updatedCourse);
+                return result;
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        #region Async Methods
         // 
         // [HttpGet]
         // public async Task<ActionResult<IEnumerable<CourseDto>>> GetCoursesAsync()
@@ -89,6 +110,7 @@ namespace Cms.WebApi.Controllers
         //         return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         //     }
         // }
+        #endregion Async Methods
 
         [HttpPost]
         public ActionResult<CourseDto> AddCourse([FromBody]CourseDto course)

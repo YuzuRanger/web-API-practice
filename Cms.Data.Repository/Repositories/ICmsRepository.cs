@@ -13,5 +13,7 @@ namespace Cms.Data.Repository.Repositories
         bool IsCourseExists(int coursedId);
 
         Course GetCourse(int courseId);
+
+        Course UpdateCourse(int courseId, Course newCourse);
     }
 }
