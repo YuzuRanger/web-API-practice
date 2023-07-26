@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace Cms.WebApi.Controllers
 {
     [ApiController]
-    [ApiVersion("1.0")]
-    [Route("[controller]")]
-    public class CoursesController: ControllerBase
+    [ApiVersion("2.0")]
+    [Route("courses")]
+    public class Courses2Controller: ControllerBase
     {
-        public CoursesController(ICmsRepository cmsRepository, IMapper mapper)
+        public Courses2Controller(ICmsRepository cmsRepository, IMapper mapper)
         {
             this.CmsRepository = cmsRepository;
             this.mapper = mapper;
@@ -67,6 +67,13 @@ namespace Cms.WebApi.Controllers
                 IEnumerable<Course> courses = CmsRepository.GetAllCourses();
                 // var result = MapCourseToCourseDto(courses);
                 var result = mapper.Map<CourseDto[]>(courses);
+
+                // version 2
+                foreach (var item in result)
+                {
+                    item.CourseName += " (v2.0)";
+                }
+
                 return result.ToList(); // convert to support ActionResult<T>
             }
             catch (System.Exception ex)
