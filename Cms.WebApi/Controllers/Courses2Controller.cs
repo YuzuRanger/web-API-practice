@@ -82,6 +82,33 @@ namespace Cms.WebApi.Controllers
             }
         }
 
+        [HttpGet]
+        [MapToApiVersion("3.0")]
+        // TO DO: THIS DOESNT WORK, IDK WHY
+        // ../courses?api-version=3.0
+        public ActionResult<IEnumerable<CourseDto>> GetCourses_v3()
+        {
+            try
+            {
+                IEnumerable<Course> courses = CmsRepository.GetAllCourses();
+                // var result = MapCourseToCourseDto(courses);
+                var result = mapper.Map<CourseDto[]>(courses);
+
+                // version 3
+                foreach (var item in result)
+                {
+                    item.CourseName += " (v3.0)";
+                }
+
+                return result.ToList(); // convert to support ActionResult<T>
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+
         [HttpPut("{courseId}")]
         public ActionResult<CourseDto> UpdateCourse(int courseId, CourseDto course)
         {

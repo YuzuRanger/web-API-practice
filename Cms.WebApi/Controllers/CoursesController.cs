@@ -75,6 +75,8 @@ namespace Cms.WebApi.Controllers
             }
         }
 
+        
+
         [HttpPut("{courseId}")]
         public ActionResult<CourseDto> UpdateCourse(int courseId, CourseDto course)
         {
