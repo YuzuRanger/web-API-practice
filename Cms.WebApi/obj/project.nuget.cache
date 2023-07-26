@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9hGp84Ne97njJNsiuaBVyijfvTHb+A/w7BF+XmMPmTJJArMHlAAH+eoY5KKy832bkQr9cFTHfl5YI3jcspkISQ==",
+  "dgSpecHash": "FhmuWg0ItCdesuqmvB54eaU1cP+umdIbYYGmIFwtqXUZA9NYsTuvWYOff49EVUNC70pPEwuuYLDKZ4U4knoE0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\morgancs\\Documents\\GitHub\\web-API-practice\\Cms.WebApi\\Cms.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\morgancs\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\morgancs\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\morgancs\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "C:\\Users\\morgancs\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.9\\microsoft.aspnetcore.openapi.7.0.9.nupkg.sha512",
     "C:\\Users\\morgancs\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\morgancs\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

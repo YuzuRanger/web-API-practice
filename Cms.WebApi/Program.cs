@@ -1,5 +1,6 @@
 using Cms.Data.Repository.Repositories;
 using Cms.WebApi.Mappers;
+using Microsoft.AspNetCore.Mvc.Versioning;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 // See https://learn.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-7.0 for more info
 builder.Services.AddSingleton<ICmsRepository, InMemoryCmsRepository>();
 builder.Services.AddAutoMapper(typeof(CmsMapper));
+builder.Services.AddApiVersioning(setupAction =>
+{
+    setupAction.AssumeDefaultVersionWhenUnspecified = true;
+    setupAction.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

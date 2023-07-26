@@ -35,3 +35,4 @@ C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\bin\Debug\net7.0\
 C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\bin\Debug\net7.0\Cms.Data.Repository.pdb
 C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\morgancs\Documents\GitHub\web-API-practice\Cms.WebApi\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
