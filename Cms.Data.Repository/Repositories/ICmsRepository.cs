@@ -8,6 +8,7 @@ namespace Cms.Data.Repository.Repositories
 
         Task<IEnumerable<Course>> GetAllCoursesAsync();
 
+        // Individual items
         Course AddCourse(Course newCourse);
 
         bool IsCourseExists(int coursedId);
@@ -17,5 +18,9 @@ namespace Cms.Data.Repository.Repositories
         Course UpdateCourse(int courseId, Course newCourse);
 
         Course DeleteCourse(int courseId);
+
+        // Association
+        IEnumerable<Student> GetStudents(int coursedId);
+        Student AddStudent(Student student);
     }
 }

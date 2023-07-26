@@ -177,6 +177,55 @@ namespace Cms.WebApi.Controllers
             }
         }
 
+        // GET ../courses/1/students
+        [HttpGet("{courseId}/students")]
+        public ActionResult<IEnumerable<StudentDto>> GetStudents(int courseId)
+        {
+            try
+            {
+                if(!CmsRepository.IsCourseExists(courseId))
+                {
+                    return NotFound();
+                }
+
+                IEnumerable<Student> students = CmsRepository.GetStudents(courseId);
+                var result = mapper.Map<StudentDto[]>(students);
+                return result;
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        // POST ../courses/1/students
+        [HttpPost("{courseId}/students")]
+        public ActionResult<StudentDto> AddStudent(int courseId, StudentDto student)
+        {
+            try
+            {
+                if(!CmsRepository.IsCourseExists(courseId))
+                {
+                    return NotFound();
+                }
+
+                Student newStudent = mapper.Map<Student>(student);
+
+                // assign course
+                Course course = CmsRepository.GetCourse(courseId);
+                newStudent.Course = course;
+
+                newStudent = CmsRepository.AddStudent(newStudent);
+                var result = mapper.Map<StudentDto>(newStudent);
+
+                return StatusCode(StatusCodes.Status201Created, result);
+            }
+            catch (System.Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
         #region Custom Mapper Functions
         // custom map function
         // private CourseDto MapCourseToCourseDto(Course course)

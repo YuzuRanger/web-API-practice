@@ -5,9 +5,11 @@ namespace Cms.Data.Repository.Repositories
     public class InMemoryCmsRepository: ICmsRepository
     {
         List<Course> courses = null;
+        List<Student> students = null;
 
         public InMemoryCmsRepository()
         {
+            // courses
             courses = new List<Course>();
             courses.Add(
                 new Course()
@@ -25,6 +27,32 @@ namespace Cms.Data.Repository.Repositories
                     CourseName = "Information Technology",
                     CourseDuration = 4,
                     CourseType = Course.COURSE_TYPE.ENGINEERING
+                }
+            );
+
+            // students
+            students = new List<Student>();
+            students.Add(
+                new Student()
+                {
+                    StudentId = 101,
+                    FirstName = "John",
+                    LastName = "Smith",
+                    PhoneNumber = "555-555-1234",
+                    Address = "US",
+                    Course = courses.Where(c => c.CourseId == 1).SingleOrDefault()
+
+                }
+            );
+            students.Add(
+                new Student()
+                {
+                    StudentId = 102,
+                    FirstName = "Robert",
+                    LastName = "Smith",
+                    PhoneNumber = "555-555-5678",
+                    Address = "US",
+                    Course = courses.Where(c => c.CourseId == 1).SingleOrDefault()
                 }
             );
         }
@@ -86,6 +114,21 @@ namespace Cms.Data.Repository.Repositories
         public async Task<IEnumerable<Course>> GetAllCoursesAsync()
         {
             return await Task.Run(() => courses.ToList());
+        }
+
+        // students
+        public IEnumerable<Student> GetStudents(int courseId)
+        {
+            return students.Where(s => s.Course.CourseId == courseId);
+        }
+
+        public Student AddStudent(Student newStudent)
+        {
+            var maxStudentId = students.Max(s => s.StudentId);
+            newStudent.StudentId = maxStudentId + 1;
+            students.Add(newStudent);
+
+            return newStudent;
         }
     }
 }
