@@ -8,7 +8,9 @@ namespace Cms.WebApi.Controllers
 {
     [ApiController]
     [ApiVersion("2.0")]
-    [Route("courses")]
+    // [Route("v{version:apiversion}/courses")]
+    // originally 
+    [Route("[controller]")]
     public class Courses2Controller: ControllerBase
     {
         public Courses2Controller(ICmsRepository cmsRepository, IMapper mapper)

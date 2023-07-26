@@ -14,6 +14,14 @@ builder.Services.AddApiVersioning(setupAction =>
 {
     setupAction.AssumeDefaultVersionWhenUnspecified = true;
     setupAction.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+
+    // we can change this name if we want, such as changing to v
+    // setupAction.ApiVersionReader = new QueryStringApiVersionReader("api-version"); 
+
+    // ../v2/courses
+    // setupAction.ApiVersionReader = new UrlSegmentApiVersionReader();
+
+    setupAction.ApiVersionReader = new HeaderApiVersionReader("X-Version");
 });
 
 builder.Services.AddControllers();

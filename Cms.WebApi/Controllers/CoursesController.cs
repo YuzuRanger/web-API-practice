@@ -8,6 +8,8 @@ namespace Cms.WebApi.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]
+    // [Route("v{version:apiversion}/[controller]")]
+    // originally 
     [Route("[controller]")]
     public class CoursesController: ControllerBase
     {
