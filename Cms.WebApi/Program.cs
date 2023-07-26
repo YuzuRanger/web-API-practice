@@ -21,7 +21,15 @@ builder.Services.AddApiVersioning(setupAction =>
     // ../v2/courses
     // setupAction.ApiVersionReader = new UrlSegmentApiVersionReader();
 
-    setupAction.ApiVersionReader = new HeaderApiVersionReader("X-Version");
+    // header
+    // setupAction.ApiVersionReader = new HeaderApiVersionReader("X-Version");
+
+    // this can be problematic if the url and header have different versions!
+    // in practice, url versioning is common
+    setupAction.ApiVersionReader = ApiVersionReader.Combine(
+        new QueryStringApiVersionReader("v"),
+        new HeaderApiVersionReader("X-Version")
+    );
 });
 
 builder.Services.AddControllers();
